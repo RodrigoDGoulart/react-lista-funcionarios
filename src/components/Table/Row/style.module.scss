@@ -1,0 +1,9 @@
+@import '../../../styles/variables.scss';
+
+.row {
+  box-shadow: $shadow;
+  margin-block: 1px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 8px 32px;
+}

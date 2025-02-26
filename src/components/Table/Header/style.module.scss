@@ -1,0 +1,20 @@
+@import '../../../styles/variables.scss';
+
+.header {
+  background-color: $blue-primary;
+  color: $white;
+  border: 12px;
+  display: grid;
+  padding: 14px 32px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.header h4 {
+  margin: 0;
+  flex: 1;
+  text-transform: uppercase;
+  text-align: left;
+  font-size: 16px;
+  font-weight: 500;
+}
