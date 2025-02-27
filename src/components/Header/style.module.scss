@@ -1,0 +1,11 @@
+@import '../../styles/variables';
+
+.header {
+  padding: 24px 32px;
+  box-shadow: $shadow-2;
+}
+
+.header img {
+  width: 72px;
+  height: auto;
+}
