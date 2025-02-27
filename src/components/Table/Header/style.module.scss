@@ -4,10 +4,15 @@
   background-color: $blue-primary;
   color: $white;
   border: 12px;
-  display: grid;
   padding: 14px 32px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
+  display: flex;
+}
+
+.header .titles {
+  display: grid;
+  flex: 1;
 }
 
 .header h4 {
@@ -17,4 +22,34 @@
   text-align: left;
   font-size: 16px;
   font-weight: 500;
+}
+
+@media (min-width: calc($mobile-breakpoint + 1px)) {
+  .dot {
+    display: none;
+  }
+}
+
+@media (max-width: $mobile-breakpoint) {
+  .dot {
+    margin-inline: 8px;
+  }
+  
+  .header {
+    padding: 14px 16px;
+  }
+
+  .titles h4 {
+    gap: 24px;
+    flex: none;
+  }
+
+  .titles {
+    display: flex !important;
+    gap: 24px;
+
+    > :nth-child(n+3) {
+      display: none;
+    }
+  }
 }

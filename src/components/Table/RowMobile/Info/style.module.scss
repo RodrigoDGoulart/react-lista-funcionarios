@@ -1,0 +1,12 @@
+@import '../../../../styles/variables';
+
+.info {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px $gray-10 dotted;
+}
+
+.label {
+  font-weight: bold;
+  flex: 1;
+}

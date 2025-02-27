@@ -7,3 +7,9 @@
   grid-template-columns: repeat(5, 1fr);
   padding: 8px 32px;
 }
+
+@media (max-width: $mobile-breakpoint) {
+  .row {
+    display: none;
+  }  
+}
