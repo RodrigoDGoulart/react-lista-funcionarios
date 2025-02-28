@@ -1,11 +1,15 @@
+import { useState } from "react";
+
 import styles from "./style.module.scss";
 
 import { Funcionario } from "../../../@types";
 
 import Avatar from "../../Avatar";
 import { CaretDown, CaretUp } from "phosphor-react";
-import { useState } from "react";
 import Info from "./Info";
+
+import { formatPhone } from "../../../utils/formatPhone";
+import { formatDate } from "../../../utils/formatDate";
 
 interface Props {
   data: Funcionario;
@@ -40,8 +44,8 @@ export default function RowMobile({ data }: Props) {
       <div className={`${styles.details} ${open ? (styles.details_open) : ('')}`}>
         <div className={styles.content}>
           <Info label="Cargo" value={data.job} />
-          <Info label="Data de admissão" value={data.admission_date.toLocaleDateString('pt-BR')} />
-          <Info label="Telefone" value={data.phone} />
+          <Info label="Data de admissão" value={formatDate(data.admission_date)} />
+          <Info label="Telefone" value={formatPhone(data.phone)} />
         </div>
       </div>
     </div>

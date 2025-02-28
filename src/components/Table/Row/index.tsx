@@ -1,6 +1,11 @@
-import { Funcionario } from "../../../@types";
-import Avatar from "../../Avatar";
 import styles from "./style.module.scss";
+
+import { Funcionario } from "../../../@types";
+
+import Avatar from "../../Avatar";
+
+import { formatDate } from "../../../utils/formatDate";
+import { formatPhone } from "../../../utils/formatPhone";
 
 interface Props {
   data: Funcionario;
@@ -12,8 +17,8 @@ export default function Row({ data }: Props) {
       <span><Avatar src={data.image} /></span>
       <span>{data.name}</span>
       <span>{data.job}</span>
-      <span>{data.admission_date.toLocaleDateString('pt-BR')}</span>
-      <span>{data.phone}</span>
+      <span>{formatDate(data.admission_date)}</span>
+      <span>{formatPhone(data.phone)}</span>
     </div>
   );
 }
