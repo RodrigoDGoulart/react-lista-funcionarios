@@ -30,7 +30,7 @@ yarn start:api
 
 5. No arquivo **.env**, deve-se colocar a url na qual está rodando a API que acabou de inicializar (no 3° passo). A URL padrão é `http://localhost:3001`
 
-6. Para inicializar a aplicação web, execute um dos comandos (caso tenha usado **npm** ou **yarn**)
+6. Para inicializar a aplicação web, execute um dos comandos
 ```cmd
 yarn dev
 ```
