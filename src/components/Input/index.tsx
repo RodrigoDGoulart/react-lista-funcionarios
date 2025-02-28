@@ -12,8 +12,8 @@ interface Props
 
 export default function Input({ icon, ...inputProps }: Props) {
   return (
-    <span className={styles.input}>
-      <input {...inputProps} />
+    <span className={`${styles.input} ${inputProps.className}`}>
+      <input className="" {...inputProps} />
       {icon && React.cloneElement(icon, {className: styles.icon, size: 16})}
     </span>
   );
