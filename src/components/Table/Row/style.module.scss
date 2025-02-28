@@ -8,6 +8,11 @@
   padding: 8px 32px;
 }
 
+.row span {
+  display: flex;
+  align-items: center;
+}
+
 @media (max-width: $mobile-breakpoint) {
   .row {
     display: none;
