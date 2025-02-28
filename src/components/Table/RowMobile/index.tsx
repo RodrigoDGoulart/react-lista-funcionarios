@@ -21,8 +21,8 @@ export default function RowMobile({ data }: Props) {
   return (
     <div className={styles.container}>
       <div className={styles.row}>
-        <Avatar src={data.foto} />
-        <span>{data.nome}</span>
+        <Avatar src={data.image} />
+        <span>{data.name}</span>
         {open ? (
           <CaretUp
             className={styles.down_icon}
@@ -39,9 +39,9 @@ export default function RowMobile({ data }: Props) {
       </div>
       <div className={`${styles.details} ${open ? (styles.details_open) : ('')}`}>
         <div className={styles.content}>
-          <Info label="Cargo" value={data.cargo} />
-          <Info label="Data de admissão" value={data.dataAdmissao.toLocaleDateString('pt-BR')} />
-          <Info label="Telefone" value={data.telefone} />
+          <Info label="Cargo" value={data.job} />
+          <Info label="Data de admissão" value={data.admission_date.toLocaleDateString('pt-BR')} />
+          <Info label="Telefone" value={data.phone} />
         </div>
       </div>
     </div>

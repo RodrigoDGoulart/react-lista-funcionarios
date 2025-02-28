@@ -13,3 +13,12 @@
   margin-top: 1px;
   gap: 1px;
 }
+
+.loading, .error {
+  color: $gray-20;
+  text-align: center;
+}
+
+.error {
+  color: red;
+}

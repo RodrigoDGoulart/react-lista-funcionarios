@@ -9,11 +9,11 @@ interface Props {
 export default function Row({ data }: Props) {
   return (
     <div className={styles.row}>
-      <span><Avatar src={data.foto} /></span>
-      <span>{data.nome}</span>
-      <span>{data.cargo}</span>
-      <span>{data.dataAdmissao.toLocaleDateString('pt-BR')}</span>
-      <span>{data.telefone}</span>
+      <span><Avatar src={data.image} /></span>
+      <span>{data.name}</span>
+      <span>{data.job}</span>
+      <span>{data.admission_date.toLocaleDateString('pt-BR')}</span>
+      <span>{data.phone}</span>
     </div>
   );
 }
