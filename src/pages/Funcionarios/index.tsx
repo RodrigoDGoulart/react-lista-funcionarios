@@ -3,6 +3,7 @@ import styles from "./style.module.scss";
 import { useEffect, useState } from "react";
 
 import { Funcionario, PageStatus } from "../../@types";
+
 import FuncionarioService from "../../services/FuncionarioService";
 
 import { MagnifyingGlass } from "phosphor-react";
@@ -17,6 +18,7 @@ export default function Funcionarios() {
     error: false,
     loading: true,
   });
+  const [searchRegExp, setSearchRegExp] = useState<RegExp>(new RegExp(''));
 
   useEffect(() => {
     FuncionarioService.getFuncionarios()
@@ -45,12 +47,13 @@ export default function Funcionarios() {
             className={styles.search_input}
             placeholder="Pesquisar"
             icon={<MagnifyingGlass weight="bold" />}
+            onChange={e => setSearchRegExp(new RegExp(e.target.value, 'i'))}
           />
         </div>
         <Table
-          content={funcionarios}
+          content={funcionarios.filter(func => searchRegExp?.test(func.name))}
           loading={status.loading}
-          error
+          error={status.error}
         />
       </main>
     </div>
