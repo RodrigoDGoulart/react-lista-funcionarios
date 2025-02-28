@@ -2,11 +2,15 @@ import { MagnifyingGlass } from "phosphor-react";
 import Header from "./components/Header";
 import Input from "./components/Input";
 import Table from "./components/Table";
+import Title from "./components/Title";
 
 function App() {
   return (
     <>
       <Header />
+      <Title size="h1">teste</Title>
+      <Title size="h2">teste</Title>
+      <Title size="h3">teste</Title>
       <Table
         content={[
           {
