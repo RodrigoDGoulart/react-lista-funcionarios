@@ -21,10 +21,10 @@ export default function Table(props: Props) {
       <div className={styles.body}>
         {props.loading && <p className={styles.loading}>Carregando...</p>}
         {(!props.loading && !props.error) && props.content.map((item) => (
-          <>
-            <Row key={item.id} data={item} />
-            <RowMobile key={`mobile-${item.id}`} data={item} />
-          </>
+          <div key={item.id}>
+            <Row data={item} />
+            <RowMobile data={item} />
+          </div>
         ))}
         {props.error && <p className={styles.error}>Erro ao carregar lista.</p>} 
       </div>
