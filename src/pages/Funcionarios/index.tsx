@@ -11,6 +11,7 @@ import Header from "../../components/Header";
 import Input from "../../components/Input";
 import Table from "../../components/Table";
 import Title from "../../components/Title";
+import { formatPhone } from "../../utils/formatPhone";
 
 export default function Funcionarios() {
   const [funcionarios, setFuncionarios] = useState<Funcionario[]>([]);
@@ -18,6 +19,7 @@ export default function Funcionarios() {
     error: false,
     loading: true,
   });
+  const [searchValue, setSearchValue] = useState('');
   const [searchRegExp, setSearchRegExp] = useState<RegExp>(new RegExp(''));
 
   useEffect(() => {
@@ -37,6 +39,11 @@ export default function Funcionarios() {
       });
   }, []);
 
+  useEffect(() => {
+    const filteredString = searchValue.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    setSearchRegExp(new RegExp(filteredString, "i"))
+  }, [searchValue, setSearchRegExp])
+
   return (
     <div className={styles.body}>
       <Header />
@@ -47,11 +54,13 @@ export default function Funcionarios() {
             className={styles.search_input}
             placeholder="Pesquisar"
             icon={<MagnifyingGlass weight="bold" />}
-            onChange={e => setSearchRegExp(new RegExp(e.target.value, 'i'))}
+            onChange={e => setSearchValue(e.target.value)}
           />
         </div>
         <Table
-          content={funcionarios.filter(func => searchRegExp?.test(func.name))}
+          content={funcionarios.filter(func => (
+            searchRegExp?.test(`${func.name} ${func.job} ${func.phone} ${formatPhone(func.phone)}`)
+          ))}
           loading={status.loading}
           error={status.error}
         />
