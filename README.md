@@ -6,6 +6,10 @@ Este repositório consiste em uma aplicação web de uma lista de usuários (fun
 
 - Node.js na versão **20.9.0** ou superior
 
+## Demonstração
+
+Veja a demonstração da aplicação <a href='https://betalent-react-lista-funcionarios.vercel.app/'>Aqui</a>
+
 ## Instalação
 
 Para instalar e executar a aplicação localmente, siga o seguinte procedimento:
